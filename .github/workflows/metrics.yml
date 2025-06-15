@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: README.md
+          filename: github-metrics.svg    # <--- SVG-файл!
           token: ${{ secrets.METRICS_TOKEN }}
           user: Karasumei
           template: classic
