@@ -9,7 +9,7 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           filename: README.md
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.STATS }}
           user: Karasumei
           template: classic
           base: header, repositories, metadata
