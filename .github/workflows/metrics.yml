@@ -13,15 +13,7 @@ jobs:
           user: Karasumei
           template: classic
           base: header, repositories, metadata
-          config_timezone: Europe/Moscow
-
-          # Только нужные плагины!
           plugin_repositories: yes
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          # achievements по желанию:
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: C
-
           config_theme: transparent
