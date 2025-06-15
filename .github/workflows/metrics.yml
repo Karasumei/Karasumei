@@ -1,6 +1,6 @@
 name: 🦑 Metrics
 on:
-  schedule: [{cron: "0 0 * * *"}] # ежедневно
+  schedule: [{cron: "0 0 * * *"}]
   workflow_dispatch:
 jobs:
   github-metrics:
@@ -9,31 +9,19 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           filename: README.md
-          token: ${{ secrets.STATS }}
+          token: ${{ secrets.METRICS_TOKEN }}
           user: Karasumei
           template: classic
-          base: header, activity, community, repositories, metadata
+          base: header, repositories, metadata
           config_timezone: Europe/Moscow
 
-          # Первый виджет — расширенная статистика
+          # Только нужные плагины!
+          plugin_repositories: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          # achievements по желанию:
           plugin_achievements: yes
           plugin_achievements_display: compact
           plugin_achievements_threshold: C
 
-          # Второй виджет — профильный виджет
-          plugin_repositories: yes
-          plugin_repositories_pinned: 2
-
-          # Третий виджет — календарь за весь год
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-
-          # Оформление
-          config_display: columns
-          config_order: |
-            isocalendar, achievements, repositories
-          config_output: markdown
-          config_twemoji: yes
-          config_padding: 24
-          config_base: header, repositories, metadata
           config_theme: transparent
